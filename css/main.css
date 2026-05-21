@@ -16,7 +16,7 @@ body {
 }
 
 /* =========================
-   NAV BASE
+   NAVIGATION
 ========================= */
 .nav {
   position: relative;
@@ -26,12 +26,12 @@ body {
   content: "";
   position: absolute;
   inset-inline: 0;
-  bottom: -32px;
+  bottom: -2rem;
   border-bottom: 1px solid var(--grey-100);
 }
 
 /* =========================
-   NAV SHARED BUTTON RESET
+   BUTTON RESET
 ========================= */
 .nav__avatar-button,
 .nav__cart-button,
@@ -40,34 +40,29 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
 /* =========================
-   QUANTITY BUTTONS UX
+   QUANTITY BUTTONS
 ========================= */
-
 .quantity__decrease,
 .quantity__increase {
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: var(--grey-50);
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
-
   transition:
     background-color 0.2s ease,
     transform 0.15s ease,
     box-shadow 0.2s ease;
 }
 
-/* hover */
 .quantity__decrease:hover,
 .quantity__increase:hover {
   background: var(--grey-100);
@@ -75,30 +70,16 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
 }
 
-/* active / press */
 .quantity__decrease:active,
 .quantity__increase:active {
   transform: scale(0.92);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
-/* keyboard focus */
 .quantity__decrease:focus-visible,
 .quantity__increase:focus-visible {
   outline: 2px solid var(--orange-500);
   outline-offset: 2px;
-}
-
-/* icon polish (optional but safe) */
-.quantity__decrease img,
-.quantity__increase img {
-  transition: transform 0.2s ease;
-  pointer-events: none;
-}
-
-.quantity__decrease:hover img,
-.quantity__increase:hover img {
-  transform: scale(1.1);
 }
 
 /* =========================
@@ -107,10 +88,8 @@ body {
 .nav__avatar-button {
   padding: 0;
   border-radius: 50%;
-
   inline-size: clamp(2.5rem, 5vw, 3.125rem);
   block-size: clamp(2.5rem, 5vw, 3.125rem);
-
   transition:
     transform 0.15s ease,
     box-shadow 0.2s ease,
@@ -130,7 +109,6 @@ body {
   outline-offset: 2px;
 }
 
-/* Avatar image */
 .nav__avatar {
   inline-size: 100%;
   block-size: 100%;
@@ -223,20 +201,16 @@ body {
   color: var(--grey-950);
 }
 
-/* underline animation */
 .nav__link::after {
   content: "";
   position: absolute;
   inset-inline: 0;
-  bottom: -50px;
+  bottom: -3rem;
   height: 4px;
-
   background-color: var(--orange-500);
-
   opacity: 0;
   transform: scaleX(0);
   transform-origin: left;
-
   transition:
     transform 0.3s ease,
     opacity 0.2s ease;
@@ -253,7 +227,7 @@ body {
 }
 
 /* =========================
-   MAIN
+   MAIN CONTENT
 ========================= */
 .main {
   width: 100%;
@@ -262,17 +236,13 @@ body {
   gap: clamp(2rem, 6vw, 8rem);
 }
 
+/* =========================
+   PRODUCT SECTION
+========================= */
 .product {
   gap: clamp(1rem, 3vw, 2rem);
 }
 
-.product__hero {
-  margin-bottom: auto;
-}
-
-/* =========================
-   PRODUCT IMAGE
-========================= */
 .product__image {
   inline-size: 100%;
   max-inline-size: 28rem;
@@ -294,123 +264,50 @@ body {
 .product__thumbnails img {
   border-radius: 10px;
   cursor: pointer;
-  width: 300px;
+  width: 18.75rem;
 }
 
 /* =========================
-   PRODUCT INFO
-========================= */
-.product-info__brand {
-  color: var(--grey-500);
-  text-transform: uppercase;
-}
-
-.product-info__title {
-  color: var(--grey-950);
-}
-
-.product-info__description {
-  color: var(--grey-500);
-}
-
-.product-info {
-  gap: clamp(1rem, 2vw, 2rem);
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-/* =========================
-   PRICE
+   PRICE & CTA
 ========================= */
 .price {
-  gap: 5px;
-}
-
-.price__top {
-  align-items: center;
+  gap: var(--space-100);
 }
 
 .price__discount {
   background-color: var(--grey-950);
-  color: #fff;
-  height: 27px;
-  width: 51px;
-  border-radius: 5px;
+  color: var(--white);
+  height: 1.6875rem;
+  width: 3.1875rem;
+  border-radius: 0.3125rem;
 }
 
-.price__old span {
-  color: var(--grey-500);
-}
-
-/* =========================
-   QUANTITY
-========================= */
-.quantity {
-  background-color: var(--grey-50);
-  padding: 16px 8px;
-  border-radius: 10px;
-  max-width: 157px;
-  width: 100%;
-}
-
-.quantity__increase,
-.quantity__decrease {
-  cursor: pointer;
-}
-
-.quantity button {
-  border: unset;
-  outline: unset;
-  background: transparent;
-}
-
-/* =========================
-   CTA BUTTON
-========================= */
 .button--add-to-cart {
-  max-width: 272px;
+  max-width: 17rem;
   width: 100%;
   color: var(--grey-950);
-}
-
-/* =========================
-   ADD TO CART - PRESS FEEDBACK
-========================= */
-
-.button--add-to-cart {
   transition:
     transform 0.15s ease,
     box-shadow 0.2s ease,
     background-color 0.2s ease;
 }
 
-/* hover (keeps your existing hover behavior intact) */
 .button--add-to-cart:hover {
   transform: translateY(-1px);
   box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
 }
 
-/* click / press */
 .button--add-to-cart:active {
-  transform: translateY(0px) scale(0.97);
+  transform: scale(0.97);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-/* keyboard focus */
-.button--add-to-cart:focus-visible {
-  outline: 2px solid var(--orange-500);
-  outline-offset: 3px;
-}
-
-.cart {
-  filter: brightness(0) saturate(100%) invert(10%);
-}
 /* =========================
    FOOTER
 ========================= */
 .attribution {
   margin-top: auto;
-  font-size: 0.6875rem;
+  font-size: var(--fs-6);
   text-align: center;
 }
 
@@ -418,51 +315,16 @@ body {
   color: inherit;
 }
 
-/* Tablet */
-@media (max-width: 768px) {
+/* =========================
+   RESPONSIVE BREAKPOINTS
+========================= */
+@media (max-width: 64em) {
   .app {
-    max-width: 608px;
-    width: 100%;
+    max-width: 38em;
   }
 }
 
-/* =========================
-   HAMBURGER ICON
-========================= */
-.nav__menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1100;
-}
-
-.nav__menu-toggle .bar {
-  width: 22px;
-  height: 2px;
-  background: #1d2026;
-  transition: all 0.3s ease;
-}
-
-/* Animate into X */
-.nav__menu-toggle.active .bar:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.nav__menu-toggle.active .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.nav__menu-toggle.active .bar:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* =========================
-   MOBILE NAV
-========================= */
-@media (max-width: 768px) {
+@media (max-width: 48em) {
   .nav__menu-toggle {
     display: flex;
   }
@@ -473,13 +335,11 @@ body {
     left: -100%;
     height: 100vh;
     width: 75%;
-    max-width: 300px;
-    background: white;
-
+    max-width: 18.75rem;
+    background: var(--white);
     flex-direction: column;
     padding: 6rem 2rem;
     gap: 2rem;
-
     transition: left 0.3s ease;
     z-index: 1050;
   }
@@ -487,151 +347,17 @@ body {
   .nav__list.active {
     left: 0;
   }
-}
 
-/* =========================
-   OVERLAY
-========================= */
-.nav__overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 1000;
-}
-
-.nav__overlay.active {
-  opacity: 1;
-  pointer-events: all;
-}
-
-/* cart */
-.cart-dropdown {
-  position: absolute;
-  top: 60px;
-  right: 0;
-  width: 250px;
-  background: white;
-  padding: 1rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  border-radius: 10px;
-}
-
-/* =========================
-   TABLET (≤1024px)
-========================= */
-@media (max-width: 1024px) {
-  .app {
-    max-width: 90%;
-    gap: var(--space-700);
-  }
-
-  .main {
-    gap: 3rem;
-  }
-
-  .product__image {
-    max-inline-size: 24rem;
-  }
-
-  .nav__list {
-    width: 60%; /* smaller drawer on tablet */
-  }
-}
-
-/* =========================
-   MOBILE (≤768px)
-========================= */
-@media (max-width: 768px) {
-  /* NAV */
-  .nav {
-    padding-inline: 1rem;
-  }
-
-  .nav__group {
-    gap: 1rem;
-  }
-
-  .nav__actions {
-    gap: 1rem;
-  }
-
-  /* NAV DRAWER */
-  .nav__list {
-    width: 75%;
-    padding-top: 5rem;
-  }
-
-  .nav__link {
-    font-size: 1rem;
-  }
-
-  /* MAIN LAYOUT STACK */
   .main {
     flex-direction: column;
     gap: 2rem;
   }
 
-  .product {
-    align-items: center;
-  }
-
-  .product__image {
-    max-inline-size: 100%;
-    border-radius: 0;
-  }
-
   .product__thumbnails {
-    display: none; /* cleaner mobile UX */
-  }
-
-  /* PRODUCT INFO */
-  .product-info {
-    padding: 0 1rem;
-  }
-
-  /* PRICE ROW */
-  .price {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .price__old {
-    margin-left: auto;
-  }
-
-  /* ACTIONS STACK */
-  .product-info__actions {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .quantity {
-    max-width: 100%;
+    display: none;
   }
 
   .button--add-to-cart {
     max-width: 100%;
-  }
-}
-
-/* =========================
-   SMALL MOBILE (≤480px)
-========================= */
-@media (max-width: 480px) {
-  .nav__list {
-    width: 85%;
-  }
-
-  .text-preset-1 {
-    font-size: 1.75rem;
-  }
-
-  .product-info__description {
-    font-size: 0.9rem;
   }
 }
