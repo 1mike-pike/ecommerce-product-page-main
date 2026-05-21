@@ -69,7 +69,7 @@ nav.addEventListener("touchstart", (e) => {
 });
 
 nav.addEventListener("touchend", (e) => {
-  let endX = e.changedTouches[0].clientX;
+  const endX = e.changedTouches[0].clientX;
 
   if (startX - endX > 50) {
     closeMenu(); // swipe left closes
